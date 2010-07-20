@@ -1,5 +1,5 @@
 === Moderate New Blogs ===
-Contributors: D Sader
+Contributors: dsader
 Donate link: http://dsader.snowotherway.org
 Tags: moderate, new blogs, moderation, multisite,
 Requires at least: 3.0
