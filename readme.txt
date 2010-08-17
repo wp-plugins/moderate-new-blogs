@@ -30,9 +30,9 @@ To change the default message for an inactive blog use your own drop-in plugin a
 == Changelog ==
 = 3.0.0 = 
 
-initial release
+* initial release
 
 == Upgrade Notice ==
 = 3.0.0 = 
 
-initial release
+* initial release
