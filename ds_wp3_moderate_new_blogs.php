@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Moderate New Blogs
-Plugin URI: http://wordpress.org/extend/plugins/moderate-new-blogs/
+Plugin URI: http://dsader.snowotherway.org/wordpress-plugins/moderate-new-blogs/
 Description: New blogs await a final click from a Super Admin to activate. Keep blog registration enabled and open, keep Super Admin email notices enabled, and this keeps new blogs queued in SuperAdmin-->Sites "Awaiting Moderation". WP3.x only
 Author: D. Sader
 Version: 3.0
