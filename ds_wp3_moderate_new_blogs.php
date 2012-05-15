@@ -2,9 +2,9 @@
 /*
 Plugin Name: Moderate New Blogs
 Plugin URI: http://wordpress.org/extend/plugins/moderate-new-blogs/
-Description: New blogs(aka sites) await a final click from a Network Admin to activate in Network-->Sites "Awaiting Moderation". WP3.1+ only
+Description: New blogs(aka sites) await a final click from a Network Admin to activate in Network-->Sites "Awaiting Moderation". WP3.3.2+ only
 Author: D Sader
-Version: 3.1
+Version: 3.3.2
 Author URI: http://dsader.snowotherway.org
 
 
@@ -40,7 +40,8 @@ class ds_moderate_blog_signup {
 			$list	= array();
 			foreach( $blogs as $details ) {
 				$blogname = get_blog_option( $details[ 'blog_id' ], 'blogname' );
-				$list[]	= '<a class="delete" href="edit.php?action=confirm&amp;action2=activateblog&amp;ref='. urlencode( $_SERVER['REQUEST_URI'] ) .'&amp;id='. $details['blog_id'] .'&amp;msg='. urlencode( sprintf( __( "You are about to activate the blog %s" ), $blogname ) ) .'">'. $blogname .'</a>';
+				$list[]	= '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $details['blog_id'] . '&amp;msg=' . urlencode( sprintf( __( 'You are about to activate the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">'. $blogname .'</a></span>';
+				
 			}
 			if (count($list))  
 				echo implode(' | ', $list); 
@@ -53,8 +54,9 @@ class ds_moderate_blog_signup {
 			$list	= array();
 			foreach( $blogs as $details ) {
 				$blogname = get_blog_option( $details[ 'blog_id' ], 'blogname' );
+
+				$list[]	= '<span class="delete"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=deleteblog&amp;id=' . $details['blog_id'] . '&amp;msg=' . urlencode( sprintf( __( 'You are about to delete the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">'. $blogname .'</a></span>';
 				
-				$list[]	= '<a class="delete" href="edit.php?action=confirm&amp;action2=deleteblog&amp;id=' . $details['blog_id'] . '&amp;msg=' . urlencode( sprintf( __( "You are about to delete the blog %s" ), $blogname ) ) . '">' . $blogname . '</a>';
 			}
 			if (count($list))  
 				echo implode(' | ', $list); 
@@ -71,12 +73,10 @@ class ds_moderate_blog_signup {
 	}
 	
 	function wpmu_blogs_actions($blog_id) {
-//		global $blog, $blogname;
-
 		$blogname = get_blog_option( $blog_id, 'blogname' );
 		if ( get_blog_status( $blog_id, "deleted" ) == '2' ) {
 			
-		echo '<span class="delete"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'edit.php?action=confirm&amp;action2=activateblog&amp;id=' . $blog_id . '&amp;msg=' . urlencode( sprintf( __( 'You are about to activate the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">' . __( 'Awaiting Moderation' ) . '</a></span>';
+		echo '<span class="activate"><a href="' . esc_url( wp_nonce_url( network_admin_url( 'sites.php?action=confirm&amp;action2=activateblog&amp;id=' . $blog_id . '&amp;msg=' . urlencode( sprintf( __( 'You are about to activate the site %s' ), $blogname ) ) ), 'confirm' ) ) . '">' . __( 'Awaiting Moderation' ) . '</a></span>';
 		}
 	}
 	

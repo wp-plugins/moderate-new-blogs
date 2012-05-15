@@ -2,8 +2,8 @@
 Contributors: dsader
 Donate link: http://dsader.snowotherway.org
 Tags: moderate, new blogs, moderation, multisite,
-Requires at least: 3.1
-Tested up to: 3.2.1
+Requires at least: 3.3.2
+Tested up to: 3.3.2
 Stable tag: Trunk
 
 WP3.0 multisite "mu-plugin". New blogs(aka sites) await a final click from a Network Admin to activate.
@@ -29,6 +29,10 @@ To change the default message for an inactive blog use your own drop-in plugin a
 * Will this plugin stop spammer blogs? No.
 
 == Changelog ==
+= 3.3.2 = 
+
+* Tested up to: WP 3.3.2
+
 = 3.1 = 
 
 * Tested up to: WP 3.2.1
@@ -38,6 +42,10 @@ To change the default message for an inactive blog use your own drop-in plugin a
 * initial release
 
 == Upgrade Notice ==
+= 3.3.2 =
+ 
+* Tested up to: WP 3.3.2
+
 = 3.0.0 = 
 
 * initial release
