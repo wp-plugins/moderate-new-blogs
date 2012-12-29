@@ -5,6 +5,8 @@ Tags: moderate, new blogs, moderation, multisite,
 Requires at least: 3.3.2
 Tested up to: 3.5
 Stable tag: Trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 WP3.0 multisite "mu-plugin". New blogs(aka sites) await a final click from a Network Admin to activate.
 
