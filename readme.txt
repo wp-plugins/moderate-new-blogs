@@ -3,7 +3,7 @@ Contributors: dsader
 Donate link: http://dsader.snowotherway.org
 Tags: moderate, new blogs, moderation, multisite,
 Requires at least: 3.3.2
-Tested up to: 3.5
+Tested up to: 3.7.1
 Stable tag: Trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
